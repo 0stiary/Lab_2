@@ -17,7 +17,6 @@ public abstract class Interactable : MonoBehaviour
 	{
 
 	}
-
 	public void OnFocus(PlayerCreature player)
 	{
 		_isFocused = true;
@@ -36,10 +35,9 @@ public abstract class Interactable : MonoBehaviour
 		if (_isFocused && _player != null)
 		{
 			Vector3 centrePoint = new Vector3(transform.position.x, _player.transform.position.y, transform.position.z);
+
 			if (Vector3.Distance(centrePoint, _player.transform.position) < _interactionDistance && !_hasInteracted)
-			{
 				Interact();
-			}
 		}
 	}
 
